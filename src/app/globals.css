@@ -180,3 +180,33 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #00f0ff;
 }
+
+/* ── js-dos v8 UI overrides ─────────────────────────────────────── */
+/* Sembunyikan sidebar bawaan js-dos (tombol floppy, zoom, dll) */
+.side-bar,
+[class*="side-bar"],
+[class*="sidebar"],
+[class*="SideBar"],
+[class*="Sidebar"],
+.jsdos-sidebar,
+.jsdos-side-bar {
+  display: none !important;
+  width: 0 !important;
+}
+
+/* Sembunyikan tombol fullscreen bawaan js-dos — kita punya sendiri */
+[class*="fullscreen-btn"],
+[class*="FullscreenBtn"],
+[class*="Fullscreen"]:not(#game-arena *[id]) {
+  display: none !important;
+}
+
+/* Paksa canvas js-dos isi 100% container tanpa letterboxing */
+#dos-container canvas,
+.js-dos canvas,
+[id*="dos"] canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  display: block !important;
+}

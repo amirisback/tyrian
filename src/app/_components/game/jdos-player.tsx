@@ -103,6 +103,8 @@ export function JdosPlayer({ dict }: JdosPlayerProps) {
       // js-dos v8: mount to div, load bundle
       const ci = Dos(dosBoxRef.current, {
         url: TYRIAN_BUNDLE,
+        noSideBar: true,
+        noFullscreen: true,
         onEvent: (event: string, ci2: any) => {
           if (event === "emu-ready") {
             setPhase("running");
@@ -233,7 +235,7 @@ export function JdosPlayer({ dict }: JdosPlayerProps) {
         {/* js-dos v8 mounts into this div — fills 100% of parent */}
         <div
           ref={dosBoxRef}
-          className="absolute inset-0 top-8 w-full h-[calc(100%-2rem)] [&>*]:w-full [&>*]:h-full [&_canvas]:!w-full [&_canvas]:!h-full [&_canvas]:!object-fill"
+          className="absolute inset-0 top-8 w-full h-[calc(100%-2rem)] [&>*]:w-full [&>*]:h-full [&_canvas]:!w-full [&_canvas]:!h-full [&_canvas]:!object-fill [&_.side-bar]:!hidden [&_.dosbox-sidebar]:!hidden [&_[class*='sidebar']]:!hidden [&_[class*='side-bar']]:!hidden [&_[class*='SideBar']]:!hidden [&_[class*='Fullscreen']]:!hidden"
           onClick={() => {
             // Re-focus canvas on click (prevents keyboard disconnect)
             const canvas = dosBoxRef.current?.querySelector("canvas");
