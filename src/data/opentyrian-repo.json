@@ -1,0 +1,39 @@
+{
+  "repository": {
+    "name": "opentyrian/opentyrian",
+    "url": "https://github.com/opentyrian/opentyrian",
+    "license": "GNU General Public License v2.0",
+    "language": "C (98.4%), Shell (1.6%)",
+    "description": "OpenTyrian is an open-source port of the DOS game Tyrian.",
+    "originalDevelopers": "Eclipse Software (Jason Emery, Alexander Brandon, Robert Allen)",
+    "publisher": "Epic MegaGames (1995) / XSIV Games (1999)"
+  },
+  "architecture": [
+    {
+      "module": "Core Engine & Game Loop",
+      "files": ["opentyr.c", "mainint.c", "tyrian2.c", "game_menu.c"],
+      "description": "Mengatur siklus game loop 60 FPS, state machine pergantian level, inisialisasi modul subsistem, dan handler menu arcade."
+    },
+    {
+      "module": "Video & Graphics Pipeline",
+      "files": ["video.c", "vga256d.c", "vga_palette.c", "video_scale.c", "video_scale_hqNx.c"],
+      "description": "Porting render buffer VGA 320x200 256-warna ke SDL2 surface dengan filter upscaling hq2x / hq3x / scaleNx."
+    },
+    {
+      "module": "Audio & FM Synthesis",
+      "files": ["musmast.c", "sndmast.c", "opl.c", "loudness.c", "lds_play.c", "jukebox.c"],
+      "description": "Emulasi chip AdLib YM3812 / Sound Blaster OPL2/OPL3 synthesizer dan pemutar format musik LOUDNESS (.LDS)."
+    },
+    {
+      "module": "Entity & Projectile System",
+      "files": ["shots.c", "player.c", "sprite.c", "destruct.c", "starlib.c"],
+      "description": "Algoritma tabrakan proyektil, pola pergerakan kapal musuh, sistem animasi partikel bintang latar, dan minigame rahasia DESTRUCT."
+    }
+  ],
+  "buildGuide": {
+    "dependencies": "SDL2, SDL2_net (opsional), GCC / Clang, Make",
+    "linuxCompile": "make TYRIAN_DIR=/usr/share/opentyrian",
+    "windowsCompile": "make (menggunakan MinGW-w64)",
+    "wasmSupport": "Dapat dikompilasi dengan Emscripten ke WebAssembly atau dijalankan via DOSBox / JS-DOS."
+  }
+}

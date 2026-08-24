@@ -1,0 +1,72 @@
+[
+  {
+    "id": "usp-talon",
+    "name": "USP Talon",
+    "manufacturer": "United Shipyards of Phoenix",
+    "class": "Light Fighter",
+    "description": "Pesawat tempur lincah standar militer USP dengan generator responsif dan mobilitas tinggi.",
+    "armor": 80,
+    "shield": 100,
+    "power": 90,
+    "speed": 95,
+    "image": "/ships/usp-talon.svg",
+    "special": "Afterburner Burst",
+    "color": "cyan"
+  },
+  {
+    "id": "gencore-phoenix",
+    "name": "Gencore Phoenix",
+    "manufacturer": "Gencore Corporation",
+    "class": "Heavy Assault Gunship",
+    "description": "Kapal tempur berlapis baja tebal dengan daya dukung persenjataan berat dan kapasitas generator raksasa.",
+    "armor": 120,
+    "shield": 140,
+    "power": 130,
+    "speed": 75,
+    "image": "/ships/gencore-phoenix.svg",
+    "special": "Dual Reactor Surge",
+    "color": "purple"
+  },
+  {
+    "id": "microsol-stalker",
+    "name": "MicroSol Stalker 21-6",
+    "manufacturer": "MicroSol Megacorp",
+    "class": "Stealth Inceptor",
+    "description": "Unit intersepsi rahasia MicroSol dengan peredam radar mutakhir dan pendingin senjata instan.",
+    "armor": 90,
+    "shield": 110,
+    "power": 115,
+    "speed": 100,
+    "image": "/ships/microsol-stalker.svg",
+    "special": "Cloaking Shunt",
+    "color": "amber"
+  },
+  {
+    "id": "super-tyrian",
+    "name": "Super Tyrian Prototype",
+    "manufacturer": "Classified / Secret Tech",
+    "class": "Experimental Dreadnought",
+    "description": "Prototipe rahasia berbasis mineral Zinglon murni dengan daya hancur gravitasi tak tertandingi.",
+    "armor": 150,
+    "shield": 160,
+    "power": 150,
+    "speed": 85,
+    "image": "/ships/super-tyrian.svg",
+    "special": "Zinglon Singularity",
+    "color": "green"
+  },
+  {
+    "id": "super-carrot",
+    "name": "The SuperCarrot",
+    "manufacturer": "Secret Easter Egg Division",
+    "class": "Bio-Mechanical Vessel",
+    "description": "Pesawat legendaris berbentuk wortel luar angkasa dengan tembakan pisang dan bom oranye bertenaga vitamin.",
+    "armor": 110,
+    "shield": 120,
+    "power": 105,
+    "speed": 110,
+    "image": "/ships/super-carrot.svg",
+    "special": "Vitamin Boost Overdrive",
+    "color": "amber"
+  }
+]

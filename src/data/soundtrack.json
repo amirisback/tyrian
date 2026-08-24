@@ -1,0 +1,52 @@
+[
+  {
+    "id": "tyrian-the-song",
+    "title": "Tyrian, The Song",
+    "composer": "Alexander Brandon",
+    "duration": "3:42",
+    "theme": "Main Title & Menu Theme",
+    "tags": ["Synthwave", "AdLib FM", "FM Synthesis"],
+    "bpm": 128,
+    "description": "Theme song legendaris Tyrian yang memukau dunia DOS gaming di era 90-an dengan aransemen FM synthesis memikat."
+  },
+  {
+    "id": "asteroid-dance",
+    "title": "Asteroid Dance Part 1",
+    "composer": "Alexander Brandon",
+    "duration": "2:54",
+    "theme": "Episode 1 Stage Combat",
+    "tags": ["Chiptune", "Action", "AdLib"],
+    "bpm": 136,
+    "description": "Irama berenergi tinggi yang mengiringi pelarian menegangkan menembus hujan peluru di sabuk asteroid."
+  },
+  {
+    "id": "gyges",
+    "title": "Gyges, Will You Please Help Me?",
+    "composer": "Alexander Brandon",
+    "duration": "3:18",
+    "theme": "Deep Space Ambient",
+    "tags": ["Atmospheric", "Space", "Sci-Fi"],
+    "bpm": 112,
+    "description": "Melodi melankolis dan misterius yang mencerminkan kesendirian pilot di kedalaman antariksa tak berujung."
+  },
+  {
+    "id": "sarahs-song",
+    "title": "Sarah's Song",
+    "composer": "Alexander Brandon",
+    "duration": "4:05",
+    "theme": "End Credits & Lore Reflection",
+    "tags": ["Ballad", "Emotional", "Chiptune"],
+    "bpm": 96,
+    "description": "Karya Alexander Brandon paling emosional yang didedikasikan untuk mengenang Sarah dalam narasi Tyrian."
+  },
+  {
+    "id": "cama6",
+    "title": "CAMA6 (The Final Battle)",
+    "composer": "Alexander Brandon",
+    "duration": "3:30",
+    "theme": "Boss Arena Anthem",
+    "tags": ["Boss Battle", "Intense", "Orchestral FM"],
+    "bpm": 144,
+    "description": "Tema pertarungan bos klimaks dengan tensi tinggi dan tempo cepat menuntut konsentrasi penuh pemain."
+  }
+]

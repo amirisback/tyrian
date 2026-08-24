@@ -1,0 +1,62 @@
+[
+  {
+    "rank": 1,
+    "pilot": "TRENT_HAWKINS",
+    "callsign": "ACE_SAVIOR",
+    "score": "14,892,400",
+    "ship": "Super Tyrian Prototype",
+    "episode": "Episode 4: An End to Fate",
+    "difficulty": "Lord of the Game",
+    "badge": "Champion"
+  },
+  {
+    "rank": 2,
+    "pilot": "BUZZ_ALDRICH",
+    "callsign": "SOLAR_VIPER",
+    "score": "12,450,180",
+    "ship": "USP Talon",
+    "episode": "Episode 3: Mission: Suicide",
+    "difficulty": "Hard",
+    "badge": "Veteran"
+  },
+  {
+    "rank": 3,
+    "pilot": "HAZEL_KROFT",
+    "callsign": "STAR_ROGUE",
+    "score": "11,102,900",
+    "ship": "MicroSol Stalker 21-6",
+    "episode": "Episode 5: Hazel's Story",
+    "difficulty": "Hard",
+    "badge": "Elite"
+  },
+  {
+    "rank": 4,
+    "pilot": "GENCORE_PILOT_X",
+    "callsign": "IRON_CLAD",
+    "score": "9,870,300",
+    "ship": "Gencore Phoenix",
+    "episode": "Episode 2: Treachery",
+    "difficulty": "Normal",
+    "badge": "Ace"
+  },
+  {
+    "rank": 5,
+    "pilot": "CARROT_BOY_99",
+    "callsign": "VEGGIE_KING",
+    "score": "8,654,000",
+    "ship": "The SuperCarrot",
+    "episode": "Episode 1: Escape",
+    "difficulty": "Impossible",
+    "badge": "Secret"
+  },
+  {
+    "rank": 6,
+    "pilot": "NORT_COMMANDER",
+    "callsign": "VOID_SPECTRE",
+    "score": "7,920,450",
+    "ship": "USP Talon",
+    "episode": "Episode 4: An End to Fate",
+    "difficulty": "Hard",
+    "badge": "Veteran"
+  }
+]

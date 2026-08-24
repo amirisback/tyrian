@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "slug": "escape",
+    "title": "Episode 1: Escape",
+    "subtitle": "Melarikan Diri dari Sektor Tyrian",
+    "planet": "Planet Tyrian",
+    "boss": "MicroSol Patrol Cruiser",
+    "levels": 8,
+    "description": "Trent Hawkins menemukan konspirasi mineral Zinglon di Planet Tyrian. Sahabatnya dibunuh oleh pasukan MicroSol, memaksanya kabur menembus kepungan armada luar angkasa musuh."
+  },
+  {
+    "id": 2,
+    "slug": "treachery",
+    "title": "Episode 2: Treachery",
+    "subtitle": "Pengkhianatan Korporat",
+    "planet": "Asteroid Belt Savara",
+    "boss": "Gencore Heavy BattlePlatform",
+    "levels": 10,
+    "description": "Mencari perlindungan pada Gencore Corporation yang ternyata menyimpan agenda gelapnya sendiri. Pertempuran sengit meletus di stasiun orbital dan sabuk asteroid."
+  },
+  {
+    "id": 3,
+    "slug": "mission-suicide",
+    "title": "Episode 3: Mission: Suicide",
+    "subtitle": "Misi Bunuh Diri ke Markas Pusat",
+    "planet": "Ixmucane Fortress",
+    "boss": "Dreadnought Dominator",
+    "levels": 11,
+    "description": "Serangan ofensif nekat ke benteng utama Ixmucane untuk melumpuhkan armada penghancur bintang MicroSol sebelum terlambat."
+  },
+  {
+    "id": 4,
+    "slug": "an-end-to-fate",
+    "title": "Episode 4: An End to Fate",
+    "subtitle": "Akhir dari Takdir Galaksi",
+    "planet": "Zinglon Core World",
+    "boss": "The Zinglon Singularity Mind",
+    "levels": 12,
+    "description": "Konfrontasi pamungkas di planet asal Zinglon. Takdir masa depan seluruh peradaban galaksi ditentukan di medan perang pamungkas ini."
+  },
+  {
+    "id": 5,
+    "slug": "hazels-story",
+    "title": "Episode 5: Hazel's Story",
+    "subtitle": "Kisah Ekstra Tyrian 2000",
+    "planet": "Proxima Deep Space",
+    "boss": "Nort Shipyard Command",
+    "levels": 9,
+    "description": "Episode bonus epik dari edisi Tyrian 2000, mengisahkan petualangan Hazel dan konfrontasi baru dengan armada bajak laut antariksa Nort."
+  }
+]

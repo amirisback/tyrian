@@ -1,0 +1,65 @@
+[
+  {
+    "id": "pulse-cannon",
+    "name": "Pulse-Cannon Mk III",
+    "type": "Front",
+    "powerCost": "Low",
+    "damage": 70,
+    "fireRate": "Very High",
+    "description": "Senjata proyektil plasma berkecepatan tinggi, andalan tempur jarak dekat dan pembersih formasi musuh kecil."
+  },
+  {
+    "id": "sonic-wave",
+    "name": "Sonic Wave Disruptor",
+    "type": "Front",
+    "powerCost": "Medium",
+    "damage": 85,
+    "fireRate": "High",
+    "description": "Memancarkan gelombang sonik berfrekuensi tinggi yang menembus perisai energi musuh dan merusak lambung kapal secara langsung."
+  },
+  {
+    "id": "plasma-storm",
+    "name": "Heavy Plasma Storm",
+    "type": "Front",
+    "powerCost": "High",
+    "damage": 95,
+    "fireRate": "Medium",
+    "description": "Tembakan bola plasma terkonsentrasi yang meledak saat tumbukan, memberikan area damage masif ke kapal induk musuh."
+  },
+  {
+    "id": "guided-missiles",
+    "name": "Micro Guided Missiles",
+    "type": "Rear",
+    "powerCost": "Medium",
+    "damage": 80,
+    "fireRate": "Medium",
+    "description": "Rudal pintar berpemandu otomatis yang mencari sasaran di bagian belakang dan samping pesawat pemain."
+  },
+  {
+    "id": "rear-vulcan",
+    "name": "Dual Rear Vulcan",
+    "type": "Rear",
+    "powerCost": "Low",
+    "damage": 65,
+    "fireRate": "Very High",
+    "description": "Senapan putar balistik ganda ke arah belakang untuk melenyapkan penyusup ekor kapal."
+  },
+  {
+    "id": "battle-orbit",
+    "name": "Battle Orbit Drone",
+    "type": "Sidekick",
+    "powerCost": "High",
+    "damage": 90,
+    "fireRate": "Automatic",
+    "description": "Drone pendamping bersenjata yang mengorbit pesawat dan menembak musuh di sudut 360 derajat."
+  },
+  {
+    "id": "repair-matrix",
+    "name": "Shield Repair Matrix",
+    "type": "Sidekick",
+    "powerCost": "Medium",
+    "damage": 0,
+    "fireRate": "Continuous",
+    "description": "Unit generator mini yang secara aktif meregenerasi integritas perisai kapal saat pertempuran berlangsung sengit."
+  }
+]

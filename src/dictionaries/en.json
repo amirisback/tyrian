@@ -1,8 +1,8 @@
 {
   "common": {
-    "appName": "Amir App",
-    "loading": "Loading...",
-    "error": "An error occurred",
+    "appName": "Tyrian",
+    "loading": "Loading System...",
+    "error": "System Error Occurred",
     "retry": "Retry",
     "back": "Back",
     "next": "Next",
@@ -15,13 +15,30 @@
     "yes": "Yes",
     "no": "No",
     "or": "or",
-    "and": "and"
+    "and": "and",
+    "playNow": "PLAY NOW",
+    "launchGame": "LAUNCH DOS EMULATOR",
+    "viewSource": "View Source Code",
+    "manual": "Pilot Manual",
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit Fullscreen",
+    "restart": "Restart Game",
+    "soundOn": "Sound On",
+    "soundOff": "Mute",
+    "scanlines": "CRT Scanlines FX",
+    "statusOnline": "SYSTEM ONLINE",
+    "dosEngine": "JS-DOS 6.22 / DOSBox Engine"
   },
   "nav": {
     "home": "Home",
-    "about": "About",
-    "contact": "Contact",
-    "menu": "Menu",
+    "play": "Play Game",
+    "hangar": "Ship Hangar",
+    "weapons": "Weapons",
+    "episodes": "Story Episodes",
+    "soundtrack": "OST Jukebox",
+    "leaderboard": "Leaderboard",
+    "source": "OpenTyrian Source",
+    "manual": "Manual & Cheats",
     "language": "Language"
   },
   "theme": {
@@ -30,49 +47,127 @@
     "dark": "Dark",
     "system": "System"
   },
-  "home": {
-    "title": "Welcome",
-    "subtitle": "To get started, edit the page.tsx file.",
-    "description": "Looking for a starting point or more instructions? Head over to",
-    "templates": "Templates",
-    "learning": "Learning Center",
-    "deployNow": "Deploy Now",
-    "documentation": "Documentation"
-  },
   "metadata": {
-    "title": "Amir App",
-    "description": "Amir App — Progressive Web Application"
+    "title": "Tyrian — Legendary DOS Game (Next.js 16 + J-Dos)",
+    "description": "Play classic 1995 Tyrian DOS game directly in your browser using J-Dos & Next.js 16. Includes OpenTyrian source showcase, ship hangar, OST jukebox player, and complete manual."
   },
-  "error": {
-    "notFound": "Page not found",
-    "notFoundDescription": "Sorry, the page you are looking for does not exist.",
-    "serverError": "Server Error",
-    "serverErrorDescription": "A server error occurred. Please try again later.",
-    "goHome": "Go to Homepage"
+  "hero": {
+    "badge": "CLASSIC 1995 DOS ARCADE • OPTIMIZED FOR NEXT.JS 16",
+    "title": "TYRIAN",
+    "subtitle": "Epic Sci-Fi Space Combat Against MicroSol Megacorp",
+    "description": "Relive the legendary 1995 vertical scrolling shooter by Eclipse Software & Epic MegaGames. Powered by WebAssembly J-Dos emulation with smooth 60 FPS performance across all devices.",
+    "ctaPlay": "PLAY GAME NOW",
+    "ctaSource": "EXPLORE OPEN TYRIAN",
+    "stat1Label": "FRAME RATE",
+    "stat1Value": "60 FPS NATIVE",
+    "stat2Label": "EPISODES",
+    "stat2Value": "5 FULL EPISODES",
+    "stat3Label": "COMPATIBILITY",
+    "stat3Value": "PWA & TOUCH GAMEPAD"
+  },
+  "game": {
+    "arenaTitle": "J-DOS EMULATION CONSOLE",
+    "arenaSubtitle": "Battle-Ready Virtual DOSBox Cabinet",
+    "readyPrompt": "CLICK TO INJECT DOSBOX & START MISSION",
+    "controlsHint": "Use Arrow Keys to Move, Spacebar to Fire, Ctrl for Rear Gun, and Esc for Menu.",
+    "touchNote": "Touch screen devices can use the Virtual Gamepad below the screen.",
+    "arcadeSettings": "Retro Display Settings",
+    "audioFx": "Synthesizer Sound Effects",
+    "virtualController": "Virtual Touch Controller"
+  },
+  "hangar": {
+    "badge": "GALACTIC COMBAT FLEET",
+    "title": "SHIP HANGAR & TECHNOLOGY",
+    "subtitle": "Inspect combat vessels and their engineering parameters before jumping into the dogfight.",
+    "armor": "Armor Integrity",
+    "shield": "Shield Capacity",
+    "power": "Generator Power",
+    "speed": "Maneuver Speed",
+    "specialAbility": "Special Ability"
+  },
+  "weapons": {
+    "badge": "MILITARY ARSENAL",
+    "title": "HEAVY WEAPONS CATALOG",
+    "subtitle": "Combine front guns, rear vulcan cannons, and sidekick drones for maximum destruction.",
+    "frontTab": "Front Guns",
+    "rearTab": "Rear Guns",
+    "sidekickTab": "Sidekick Units",
+    "damage": "Damage Output",
+    "fireRate": "Fire Rate",
+    "powerCost": "Power Draw"
+  },
+  "episodes": {
+    "badge": "GALACTIC CAMPAIGN",
+    "title": "5 TYRIAN CAMPAIGN EPISODES",
+    "subtitle": "From the desperate escape on Tyrian to the ultimate showdown at the Zinglon Core.",
+    "levels": "Combat Stages",
+    "primaryBoss": "Primary Boss Flagship",
+    "destination": "Sector Location"
+  },
+  "jukebox": {
+    "badge": "CHIPTUNE ORIGINAL SOUNDTRACK",
+    "title": "ALEXANDER BRANDON JUKEBOX",
+    "subtitle": "Experience legendary FM Synthesis & AdLib compositions that defined 90s video game music.",
+    "composer": "Composer",
+    "playing": "NOW PLAYING",
+    "paused": "PAUSED",
+    "visualizer": "Waveform Synthesizer",
+    "fmEmulation": "YM3812 OPL2 / Sound Blaster 16 Emulation"
+  },
+  "leaderboard": {
+    "badge": "HALL OF FAME",
+    "title": "ARCADE HIGH SCORE LEADERBOARD",
+    "subtitle": "Honoring the legendary pilots who dismantled the MicroSol armada.",
+    "colRank": "RANK",
+    "colPilot": "PILOT CALLSIGN",
+    "colScore": "HIGH SCORE",
+    "colShip": "SHIP",
+    "colEpisode": "EPISODE",
+    "colDifficulty": "DIFFICULTY"
+  },
+  "lore": {
+    "badge": "INTELLIGENCE & LORE",
+    "title": "TYRIAN UNIVERSE LORE",
+    "subtitle": "A chronicle of space espionage, corporate treason, and mysterious Zinglon mineral.",
+    "microsolTitle": "The Dominance of MicroSol Megacorp",
+    "microsolDesc": "MicroSol is a massive galactic conglomerate controlling terraforming routes across star systems. Upon discovering Zinglon's infinite energy potential, MicroSol unleashed a lethal campaign to assassinate anyone with knowledge of the mineral.",
+    "trentTitle": "Trent Hawkins — Recon Pilot",
+    "trentDesc": "A talented terraforming reconnaissance pilot, Trent discovers the Zinglon anomaly on Planet Tyrian. Following the brutal assassination of his partner Buce Aldrich, Trent becomes the galaxy's most wanted target and must fight for survival.",
+    "zinglonTitle": "Zinglon — The Living Mineral",
+    "zinglonDesc": "Zinglon is a rare living crystalline substance emitting micro-gravitational pulses. Integrated into ship reactors, Zinglon supercharges plasma cannons and generates limitless deflector shields."
+  },
+  "source": {
+    "badge": "OPEN SOURCE ENGINEERING",
+    "title": "OPEN TYRIAN REPOSITORY",
+    "subtitle": "Explore the open-source C/SDL2 port of the legendary DOS classic Tyrian.",
+    "architectureTitle": "C Engine Architecture & System Modules",
+    "architectureDesc": "OpenTyrian modularizes rendering for VGA 320x200 256-color modes, AdLib OPL2/OPL3 FM synthesis, and projectile/entity collision subsystems.",
+    "compilationTitle": "Compilation & Build Instructions",
+    "sourceEmbeddedTitle": "Source Code Embedded in Project",
+    "sourceEmbeddedDesc": "The complete OpenTyrian source code is located in the /opentyrian directory in this repository as requested.",
+    "githubButton": "Visit GitHub opentyrian/opentyrian"
+  },
+  "manual": {
+    "badge": "OFFICIAL PILOT MANUAL",
+    "title": "PILOT FLIGHT MANUAL & SECRETS",
+    "subtitle": "Maneuver guidelines, generator calibration tactics, and legendary cheat codes.",
+    "controlsTitle": "Physical & Tactical Controls",
+    "upgradesTitle": "Shield & Generator Upgrade Priority",
+    "cheatsTitle": "Secret Codes & Easter Eggs",
+    "destructTitle": "Secret Minigame: DESTRUCT",
+    "destructDesc": "Type DESTRUCT in Tyrian's main menu to play the classic 2-player artillery tank battle game!"
   },
   "footer": {
-    "copyright": "© {year} Amir App. All rights reserved.",
-    "madeWith": "Made with"
+    "copyright": "© 2026 Tyrian DOS Arcade. Built with Next.js 16, Tailwind CSS v4 & J-Dos.",
+    "originalCredits": "Original game by Eclipse Software (Jason Emery, Alexander Brandon, Robert Allen) & published by Epic MegaGames (1995).",
+    "openTyrianCredits": "Powered by the open-source OpenTyrian project.",
+    "pwaReady": "PWA Ready • Serwist Cache Enabled"
   },
-  "demo": {
-    "title": "ID Encryption & Obfuscation",
-    "subtitle": "High security & clean URLs for Next.js",
-    "intro": "This page demonstrates the implementation of two ID security techniques that have been integrated into this template.",
-    "obfuscationTitle": "1. ID Obfuscation (Sqids)",
-    "obfuscationDesc": "Converts sequential database integer IDs into short, unique, and URL-friendly strings. Perfect for hiding IDs from being guessed.",
-    "obfuscationPlaceholder": "Enter positive number ID (e.g. 12345)",
-    "obfuscateButton": "Obfuscate ID",
-    "deobfuscateButton": "Deobfuscate ID",
-    "encryptionTitle": "2. Cryptographic Encryption (AES-256-GCM)",
-    "encryptionDesc": "High-security, authenticated, and tamper-proof AES-GCM encryption. Runs exclusively on the server (Server Component / Action).",
-    "encryptionPlaceholder": "Enter sensitive text or UUID",
-    "encryptButton": "Encrypt Text",
-    "decryptButton": "Decrypt Text",
-    "result": "Result",
-    "original": "Original",
-    "processed": "Processed",
-    "errorInvalidNumber": "Please enter a valid positive number.",
-    "errorEmptyText": "Text cannot be empty.",
-    "success": "Success!"
+  "error": {
+    "notFound": "Sector Not Found",
+    "notFoundDescription": "The celestial coordinates you are searching for are outside sensor range.",
+    "serverError": "Reactor Core Failure",
+    "serverErrorDescription": "A critical system anomaly occurred. Please try again shortly.",
+    "goHome": "Return to Base"
   }
 }

@@ -2,11 +2,10 @@ import type { MetadataRoute } from "next";
 
 const SITE_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
-// Add all your static routes here
 const staticRoutes = [
-  "",          // Homepage
-  // "/about",
-  // "/contact",
+  "",
+  "/source",
+  "/manual",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

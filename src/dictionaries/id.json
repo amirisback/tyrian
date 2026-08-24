@@ -1,8 +1,8 @@
 {
   "common": {
-    "appName": "Amir App",
-    "loading": "Memuat...",
-    "error": "Terjadi kesalahan",
+    "appName": "Tyrian",
+    "loading": "Memuat Sistem...",
+    "error": "Terjadi kesalahan sistem",
     "retry": "Coba Lagi",
     "back": "Kembali",
     "next": "Selanjutnya",
@@ -15,13 +15,30 @@
     "yes": "Ya",
     "no": "Tidak",
     "or": "atau",
-    "and": "dan"
+    "and": "dan",
+    "playNow": "MAIN SEKARANG",
+    "launchGame": "LUNCURKAN EMULATOR DOS",
+    "viewSource": "Lihat Source Code",
+    "manual": "Panduan Pilot",
+    "fullscreen": "Layar Penuh",
+    "exitFullscreen": "Keluar Layar Penuh",
+    "restart": "Restart Game",
+    "soundOn": "Suara Nyala",
+    "soundOff": "Hening",
+    "scanlines": "Efek Scanline CRT",
+    "statusOnline": "SISTEM ONLINE",
+    "dosEngine": "JS-DOS 6.22 / DOSBox Engine"
   },
   "nav": {
     "home": "Beranda",
-    "about": "Tentang",
-    "contact": "Kontak",
-    "menu": "Menu",
+    "play": "Mainkan Game",
+    "hangar": "Hangar Pesawat",
+    "weapons": "Persenjataan",
+    "episodes": "Episode Cerita",
+    "soundtrack": "Jukebox OST",
+    "leaderboard": "Papan Skor",
+    "source": "OpenTyrian Source",
+    "manual": "Buku Manual & Cheat",
     "language": "Bahasa"
   },
   "theme": {
@@ -30,49 +47,127 @@
     "dark": "Gelap",
     "system": "Sistem"
   },
-  "home": {
-    "title": "Selamat Datang",
-    "subtitle": "Untuk memulai, edit file page.tsx.",
-    "description": "Mencari titik awal atau instruksi lebih lanjut? Kunjungi",
-    "templates": "Template",
-    "learning": "Pusat Belajar",
-    "deployNow": "Deploy Sekarang",
-    "documentation": "Dokumentasi"
-  },
   "metadata": {
-    "title": "Amir App",
-    "description": "Amir App — Aplikasi Web Progressive"
+    "title": "Tyrian — Game DOS Legendaris (Next.js 16 + J-Dos)",
+    "description": "Mainkan Tyrian DOS Game klasik langsung di browser menggunakan J-Dos & Next.js 16. Dilengkapi showcase source code OpenTyrian, hangar pesawat, OST player, dan panduan lengkap."
   },
-  "error": {
-    "notFound": "Halaman tidak ditemukan",
-    "notFoundDescription": "Maaf, halaman yang Anda cari tidak ada.",
-    "serverError": "Kesalahan Server",
-    "serverErrorDescription": "Terjadi kesalahan pada server. Silakan coba lagi nanti.",
-    "goHome": "Kembali ke Beranda"
+  "hero": {
+    "badge": "ARCADE DOS KLASIK 1995 • DIOPTIMALKAN UNTUK NEXT.JS 16",
+    "title": "TYRIAN",
+    "subtitle": "Pertempuran Antariksa Epik Melawan Megakorporasi MicroSol",
+    "description": "Rasakan kembali sensasi vertical scrolling shooter legendaris tahun 1995 karya Eclipse Software & Epic MegaGames. Ditenagai emulator WebAssembly J-Dos dengan performa 60 FPS mulus di semua perangkat.",
+    "ctaPlay": "MAIN GAME SEKARANG",
+    "ctaSource": "EKSPLORASI OPEN TYRIAN",
+    "stat1Label": "FRAME RATE",
+    "stat1Value": "60 FPS NATIVE",
+    "stat2Label": "EPISODE",
+    "stat2Value": "5 EPISODE LENGKAP",
+    "stat3Label": "KOMPATIBILITAS",
+    "stat3Value": "PWA & TOUCH GAMEPAD"
+  },
+  "game": {
+    "arenaTitle": "KONSOL EMULASI J-DOS",
+    "arenaSubtitle": "Kabin Virtual DOSBox Siap Tempur",
+    "readyPrompt": "KLIK UNTUK MENGINJEKSIKAN DOSBOX & MEMULAI MISI",
+    "controlsHint": "Gunakan Tombol Panah untuk Gerak, Spasi untuk Tembak, Ctrl untuk Senjata Belakang, dan Esc untuk Menu.",
+    "touchNote": "Perangkat layar sentuh dapat menggunakan Virtual Gamepad di bawah layar.",
+    "arcadeSettings": "Pengaturan Layar Retro",
+    "audioFx": "Efek Suara Synthesizer",
+    "virtualController": "Virtual Touch Controller"
+  },
+  "hangar": {
+    "badge": "ARMADA TEMPUR GALAKSI",
+    "title": "HANGAR PESAWAT & TEKNOLOGI",
+    "subtitle": "Pilih dan pelajari spesifikasi kapal tempur sebelum terjun ke palung pertempuran.",
+    "armor": "Ketahanan Armor",
+    "shield": "Kapasitas Perisai",
+    "power": "Daya Generator",
+    "speed": "Kecepatan Manuver",
+    "specialAbility": "Kemampuan Khusus"
+  },
+  "weapons": {
+    "badge": "ARSENAL MILITER",
+    "title": "KATALOG PERSENJATAAN BERAT",
+    "subtitle": "Kombinasi senjata depan, senjata belakang, dan sidekicks untuk daya hancur maksimal.",
+    "frontTab": "Senjata Depan (Front Gun)",
+    "rearTab": "Senjata Belakang (Rear Gun)",
+    "sidekickTab": "Unit Pendamping (Sidekicks)",
+    "damage": "Daya Rusak",
+    "fireRate": "Laju Tembak",
+    "powerCost": "Konsumsi Daya"
+  },
+  "episodes": {
+    "badge": "KAMPANYE GALAKSI",
+    "title": "5 EPISODE PERJALANAN TYRIAN",
+    "subtitle": "Dari pelarian dramatis hingga konfrontasi penentuan di inti dunia Zinglon.",
+    "levels": "Level Tempur",
+    "primaryBoss": "Target Kapal Induk",
+    "destination": "Lokasi Sektor"
+  },
+  "jukebox": {
+    "badge": "ORIGINAL SOUNDTRACK CHIPTUNE",
+    "title": "JUKEBOX ALEXANDER BRANDON",
+    "subtitle": "Dengarkan komposisi FM Synthesis & AdLib legendaris yang mengukir sejarah musik video game.",
+    "composer": "Komposer",
+    "playing": "MEMUTAR SEKARANG",
+    "paused": "JEDA",
+    "visualizer": "Waveform Synthesizer",
+    "fmEmulation": "Emulasi YM3812 OPL2 / Sound Blaster 16"
+  },
+  "leaderboard": {
+    "badge": "HALL OF FAME",
+    "title": "PAPAN SKOR TERTINGGI ARCADE",
+    "subtitle": "Catatan rekor pilot-pilot terbaik yang berhasil menaklukkan armada MicroSol.",
+    "colRank": "PERINGKAT",
+    "colPilot": "PILOT CALLSIGN",
+    "colScore": "SKOR TERTINGGI",
+    "colShip": "KAPAL",
+    "colEpisode": "EPISODE",
+    "colDifficulty": "TINGKAT KESULITAN"
+  },
+  "lore": {
+    "badge": "INTELIJEN & LATAR BELAKANG",
+    "title": "SEJARAH SEMESTA TYRIAN",
+    "subtitle": "Kisah spionase antariksa, konspirasi korporat, dan mineral misterius Zinglon.",
+    "microsolTitle": "Dominasi Megakorporasi MicroSol",
+    "microsolDesc": "MicroSol adalah konglomerasi antariksa raksasa yang menguasai rute terraforming di galaksi. Menemukan rahasia mineral Zinglon yang mampu meregenerasi energi dan membentuk perisai tak terbatas, MicroSol berniat memonopoli semesta dengan melenyapkan siapa pun yang mengetahui rahasia ini.",
+    "trentTitle": "Trent Hawkins — Pilot Pengintai",
+    "trentDesc": "Sebagai pilot pengintai berbakat, Trent menemukan anomali mineral Zinglon di Planet Tyrian. Ketika rekannya, Buce Aldrich, dibunuh secara keji, Trent menjadi target perburuan nomor satu di seluruh galaksi dan harus bertarung untuk bertahan hidup.",
+    "zinglonTitle": "Zinglon — Mineral Misterius",
+    "zinglonDesc": "Zinglon adalah substansi kristal hidup yang memancarkan frekuensi gravitasi mikro. Bila diproses dalam reaktor kapal, Zinglon melipatgandakan daya tembak meriam plasma dan menyuplai medan perisai pelindung tanpa henti."
+  },
+  "source": {
+    "badge": "OPEN SOURCE ENGINEERING",
+    "title": "OPEN TYRIAN REPOSITORY",
+    "subtitle": "Eksplorasi porting open-source C/SDL2 dari game DOS legendaris Tyrian.",
+    "architectureTitle": "Arsitektur Engine C & Modul Sistem",
+    "architectureDesc": "OpenTyrian memisahkan kode sumber menjadi modul terisolasi untuk rendering video VGA 320x200, emulasi AdLib OPL2/OPL3 synthesizer, dan entity system.",
+    "compilationTitle": "Panduan Kompilasi & Build",
+    "sourceEmbeddedTitle": "Source Code Terpasang di Project",
+    "sourceEmbeddedDesc": "Source code OpenTyrian telah disertakan langsung di direktori /opentyrian dalam repository ini sesuai instruksi.",
+    "githubButton": "Kunjungi GitHub opentyrian/opentyrian"
+  },
+  "manual": {
+    "badge": "DOKUMEN MANUAL RESMI",
+    "title": "BUKU PANDUAN PILOT & RAHASIA",
+    "subtitle": "Instruksi manuver, kalibrasi generator, dan kode cheat legendaris.",
+    "controlsTitle": "Instruksi Kontrol Fisik & Taktis",
+    "upgradesTitle": "Strategi Upgrade Generator & Perisai",
+    "cheatsTitle": "Kode Rahasia & Easter Eggs",
+    "destructTitle": "Minigame Rahasia: DESTRUCT",
+    "destructDesc": "Ketik DESTRUCT pada menu utama Tyrian untuk memainkan game duel tank artillery klasik 2 pemain!"
   },
   "footer": {
-    "copyright": "© {year} Amir App. Semua hak dilindungi.",
-    "madeWith": "Dibuat dengan"
+    "copyright": "© 2026 Tyrian DOS Arcade. Dibuat dengan Next.js 16, Tailwind CSS v4 & J-Dos.",
+    "originalCredits": "Karya asli oleh Eclipse Software (Jason Emery, Alexander Brandon, Robert Allen) & diterbitkan oleh Epic MegaGames (1995).",
+    "openTyrianCredits": "Ditenagai oleh proyek open-source OpenTyrian.",
+    "pwaReady": "PWA Ready • Serwist Cache Enabled"
   },
-  "demo": {
-    "title": "Enkripsi & Penyamaran ID",
-    "subtitle": "Keamanan tingkat tinggi & URL yang bersih untuk Next.js",
-    "intro": "Halaman ini menunjukkan implementasi dari dua teknik pengamanan ID yang telah diintegrasikan ke dalam template ini.",
-    "obfuscationTitle": "1. Penyamaran ID (Sqids)",
-    "obfuscationDesc": "Mengubah ID integer berurutan (misal dari database) menjadi string acak pendek dan ramah URL. Cocok untuk menyembunyikan ID agar tidak ditebak.",
-    "obfuscationPlaceholder": "Masukkan ID angka positif (misal: 12345)",
-    "obfuscateButton": "Samarkan ID",
-    "deobfuscateButton": "Kembalikan ID",
-    "encryptionTitle": "2. Enkripsi Kriptografis (AES-256-GCM)",
-    "encryptionDesc": "Enkripsi tingkat tinggi yang aman, terautentikasi (AES-GCM), dan anti-manipulasi. Hanya berjalan di sisi server (Server Component / Action).",
-    "encryptionPlaceholder": "Masukkan teks atau UUID sensitif",
-    "encryptButton": "Enkripsi Teks",
-    "decryptButton": "Dekripsi Teks",
-    "result": "Hasil",
-    "original": "Asli",
-    "processed": "Hasil Proses",
-    "errorInvalidNumber": "Silakan masukkan angka positif yang valid.",
-    "errorEmptyText": "Teks tidak boleh kosong.",
-    "success": "Sukses!"
+  "error": {
+    "notFound": "Sektor Tidak Ditemukan",
+    "notFoundDescription": "Koordinat galaksi yang Anda cari berada di luar jangkauan radar.",
+    "serverError": "Kerusakan Reaktor Server",
+    "serverErrorDescription": "Terjadi anomali pada sistem. Silakan coba kembali sesaat lagi.",
+    "goHome": "Kembali ke Pangkalan"
   }
 }
