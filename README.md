@@ -1,210 +1,210 @@
-# 🚀 Init Next.js App — Amir App
+# 🚀 Tyrian — Play Tyrian 2000 in Your Browser
 
-Selamat datang di **Amir App**, template Next.js 16 modern berbasis **React 19**, **Tailwind CSS v4.3**, dan **TypeScript 6 (Strict Mode)** dengan dukungan Progressive Web App (PWA) serta integrasi i18n native berbasis cookie tanpa URL prefix.
+<div align="center">
 
-Repositori ini dioptimalkan secara mendalam menggunakan **Bun** sebagai pengelola paket, konfigurasi **ESLint v9**, serta dilengkapi dengan **ID Security Suite** bawaan untuk pengamanan identitas data Anda.
+![Tyrian 2000](https://img.shields.io/badge/Game-Tyrian%202000-cyan?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEyIDJMNCAyMGgxNnoiLz48L3N2Zz4=)
+![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-v4.3-38BDF8?style=for-the-badge&logo=tailwindcss)
+![PWA](https://img.shields.io/badge/PWA-Serwist%20v9.5-purple?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
+**Tyrian 2000** dijalankan langsung di browser menggunakan **js-dos v8 WebAssembly DOSBox** — tanpa plugin, tanpa install, kecepatan penuh 60 FPS.
+
+[🎮 Main Sekarang](http://localhost:3000) · [📖 Panduan Pilot](http://localhost:3000/manual) · [💻 Source Code](http://localhost:3000/source)
+
+</div>
 
 ---
 
-## 📊 Arsitektur Pengamanan ID (ID Security Suite)
+## 🎮 Tentang Proyek Ini
 
-Berikut adalah visualisasi alur pemrosesan data pada dua fitur keamanan utama (Sqids & AES-256-GCM) yang terintegrasi di dalam template ini:
+**Tyrian** adalah proyek web yang memungkinkan siapa saja memainkan game klasik **Tyrian 2000** (1999, Epic MegaGames) langsung di browser modern tanpa instalasi apapun.
 
-```mermaid
-graph TD
-    Input[("Input ID / Teks")] --> Decision{"Pilih Metode Keamanan"}
-    
-    %% Obfuscation Path (Sqids)
-    Decision -- "Penyamaran ID (Sqids)" --> SqidsBlock["lib/obfuscator.ts (Sqids)"]
-    SqidsBlock --> |"Encode (Positive Integer)"| ObfHash["Obfuscated Hash (misal: o7vL39)"]
-    ObfHash --> |"Deobfuscate"| SqidsBlock
-    
-    %% Encryption Path (AES)
-    Decision -- "Enkripsi Kriptografis (AES-256-GCM)" --> ServerAction["app/demo-encryption/actions.ts (use server)"]
-    ServerAction --> |"Membaca ENCRYPTION_KEY"| AESGCM["lib/crypto.ts (AES-256-GCM)"]
-    AESGCM --> |"Encrypt & Sign"| EncToken["Base64 URL-Safe Encrypted Token"]
-    EncToken --> |"Decrypt & Verify"| AESGCM
-    
-    %% UI Presentation
-    ObfHash --> UI["Demo Interface / URL SearchParams"]
-    EncToken --> UI
-    
-    style Decision fill:#1a1a1a,stroke:#333,stroke-width:2px,color:#fff
-    style SqidsBlock fill:#312e81,stroke:#4338ca,color:#fff
-    style AESGCM fill:#064e3b,stroke:#047857,color:#fff
-    style ServerAction fill:#0f172a,stroke:#1e293b,color:#fff
-```
+Game dijalankan menggunakan **js-dos v8** — emulator DOSBox berbasis WebAssembly yang berjalan di sisi klien dengan kecepatan tinggi. Bundle game diunduh dari CDN melalui proxy server Next.js untuk menghindari CORS restriction.
+
+Repository ini juga menyertakan **source code OpenTyrian** (port SDL open-source dari Tyrian) untuk keperluan referensi dan dokumentasi arsitektur game.
 
 ---
 
 ## ✨ Fitur Utama
 
-1. **Next.js 16 (App Router)** & **React 19**: Memanfaatkan fitur rendering server terbaru (*Server Components by default*).
-2. **Tailwind CSS v4.3 & Theming**: Styling modern berbasis CSS variables (`@theme inline`) dilengkapi `ThemeSwitcher` (`next-themes`) untuk Dark 🌙, Light ☀️, dan System 💻 mode.
-3. **Serwist PWA v9.5**: Service worker luring (*offline-first*) yang tangguh untuk mendukung Progressive Web Application.
-4. **Cookie-Based Native i18n**: Sistem lokalisasi native berbasis cookie `NEXT_LOCALE` tanpa prefix URL `[lang]`, menjaga URL tetap bersih (`/`, `/demo-encryption`). Mendukung Bahasa Indonesia (default: `id`) dan Inggris (`en`).
-5. **ID Security Suite**:
-   * **Sqids Obfuscation**: Mengubah ID integer database (auto-increment) menjadi hash unik ramah URL untuk menyembunyikan detail sensitif database.
-   * **AES-256-GCM Cryptography**: Enkripsi dua arah terautentikasi (*tamper-proof*) berbasis server untuk menjaga privasi data sensitif seperti UUID atau string transaksi.
-6. **Continuous Integration (CI)**: Pipeline GitHub Actions otomatis untuk mendeteksi error linter dan memverifikasi build aplikasi pada setiap Pull Request ke cabang `master`.
+| Fitur | Detail |
+|-------|--------|
+| 🎮 **Emulasi DOSBox WASM** | js-dos v8 — berjalan native di browser tanpa plugin |
+| ⚡ **Turbo 60 FPS** | Auto-max CPU cycles, performa penuh sejak pertama kali dijalankan |
+| 🖵 **Fullscreen 100%** | Canvas mengisi layar penuh, tidak ada letterboxing |
+| 🎮 **Virtual Gamepad** | Kontrol layar sentuh untuk mobile/tablet |
+| 🌐 **Bilingual** | Antarmuka Bahasa Indonesia & English |
+| 📱 **PWA Offline** | Install sebagai aplikasi, dapat dimainkan offline (Serwist) |
+| 💻 **OpenTyrian Source** | Source code C/SDL lengkap tersedia di `opentyrian/` |
+| 🎵 **OST Jukebox** | Putar soundtrack Alexander Brandon langsung di halaman |
 
 ---
 
-## 📁 Struktur Folder Utama
+## 🏗️ Arsitektur Teknis
 
 ```
-Init-nextjs-app/
-├── .github/workflows/         # Pipeline CI GitHub Actions (Lint & Build)
-├── src/                       # 📂 Semua Source Code Utama
-│   ├── app/                   # Next.js App Router
-│   │   ├── _components/       # Komponen UI App-wide (ThemeSwitcher, LanguageSwitcher)
-│   │   ├── demo-encryption/   # Halaman & Komponen Demo Keamanan ID
-│   │   │   ├── actions.ts     # Server Actions (use server)
-│   │   │   ├── DemoClient.tsx # Komponen Interaktif Klien
-│   │   │   └── page.tsx       # Halaman utama demo (Server Component)
-│   │   ├── favicon.ico
-│   │   ├── globals.css        # Pengaturan CSS & Tema Tailwind v4
-│   │   ├── layout.tsx         # Root Layout (ThemeProvider, Metadata SEO)
-│   │   ├── manifest.ts        # Web App Manifest PWA
-│   │   ├── page.tsx           # Halaman Utama (Homepage i18n)
-│   │   ├── providers.tsx      # Provider Wrapper (next-themes ThemeProvider)
-│   │   ├── robots.ts          # Generator robots.txt
-│   │   ├── sitemap.ts         # Generator sitemap.xml
-│   │   └── sw.ts              # Service Worker (Serwist)
-│   ├── dictionaries/          # Berkas Terjemahan Bahasa (JSON)
-│   │   ├── id.json            # Bahasa Indonesia (Default)
-│   │   └── en.json            # Bahasa Inggris
-│   ├── i18n/                  # Konfigurasi i18n
-│   │   └── config.ts          # Config locale & tipe Locale
-│   ├── lib/                   # Utilitas Pendukung Server & Client
-│   │   ├── crypto.ts          # Enkripsi & Dekripsi AES-256-GCM (Server-Only)
-│   │   ├── dictionaries.ts    # Dictionary loader (Server-Only)
-│   │   ├── i18n-actions.ts    # Server Action pengubah cookie NEXT_LOCALE
-│   │   ├── i18n-server.ts     # Helper retrieval locale & dictionary (Server-Only)
-│   │   ├── obfuscator.ts      # Penyamaran & Pemulihan ID (Sqids)
-│   │   └── seo.ts             # Utilitas JSON-LD & SEO Metadata
-│   └── proxy.ts               # Proxy middleware ringan
-├── public/                    # Aset statis & Ikon PWA
-├── prompt_ai/                 # Prompt AI & panduan instruksi
-├── .env                       # Variabel environment umum
-├── .env.development           # Overrides dev lokal
-├── .env.production            # Overrides produksi (tanpa rahasia)
-├── .env.example               # Template referensi variabel environment
-├── AGENTS.md                  # Aturan khusus AI Agent (Next.js & Skills)
-├── GUIDELINE.md               # 📌 Panduan arsitektur & standar coding proyek
-├── next.config.ts             # Konfigurasi Next.js
-├── tsconfig.json              # Konfigurasi TypeScript Strict
-├── eslint.config.mjs          # Konfigurasi ESLint v9
-└── package.json               # Dependensi & skrip proyek
+tyrian/
+├── src/
+│   ├── app/
+│   │   ├── _components/
+│   │   │   ├── game/
+│   │   │   │   ├── jdos-player.tsx      # 🎮 Emulator js-dos v8 (core)
+│   │   │   │   ├── virtual-gamepad.tsx  # 📱 Touch controller
+│   │   │   │   └── controls-guide.tsx   # ⌨️ Keyboard guide
+│   │   │   ├── sections/               # Landing page sections
+│   │   │   └── ui/                     # Shared UI components
+│   │   ├── api/
+│   │   │   └── dos-bundle/route.ts     # 🔀 CORS proxy untuk cdn.dos.zone
+│   │   ├── manual/page.tsx             # 📖 Panduan pilot & cheats
+│   │   ├── source/page.tsx             # 💻 OpenTyrian source showcase
+│   │   ├── globals.css                 # 🎨 Design system & CRT effects
+│   │   ├── layout.tsx                  # Root layout (SEO, PWA, i18n)
+│   │   ├── manifest.ts                 # PWA manifest
+│   │   ├── robots.ts                   # SEO robots
+│   │   └── sitemap.ts                  # SEO sitemap
+│   ├── data/                           # Static JSON data
+│   │   ├── ships.json                  # Ship specs
+│   │   ├── weapons.json                # Weapons catalog
+│   │   ├── episodes.json               # Episode list
+│   │   ├── soundtrack.json             # OST tracks
+│   │   └── leaderboard.json            # High scores
+│   ├── dictionaries/                   # i18n translations
+│   │   ├── id.json                     # Bahasa Indonesia
+│   │   └── en.json                     # English
+│   └── lib/                            # Utilities
+│       ├── i18n-server.ts              # Locale + dictionary resolver
+│       └── seo.ts                      # JSON-LD structured data
+├── opentyrian/                         # 💻 OpenTyrian C/SDL source code
+│   └── src/                            # ~104 file C (referensi arsitektur)
+├── public/                             # Static assets & PWA icons
+├── AGENTS.md                           # AI agent rules
+└── GUIDELINE.md                        # Project coding standards
+```
+
+### Alur Proxy Bundle Game (Bypass CORS)
+
+```
+Browser (localhost:3000)
+  │
+  ├── GET /api/dos-bundle?game=tyrian-2000   ← same-origin, bebas CORS
+  │       │
+  │       └── Next.js Server
+  │               │
+  │               └── fetch("https://cdn.dos.zone/custom/dos/tyrian-2000.jsdos")
+  │                       │                ↑ server-to-server, tanpa CORS restriction
+  │                       └── stream response → browser → js-dos v8 mounts & runs
 ```
 
 ---
 
-## 🛠️ Panduan Pengembangan
+## 🛠️ Setup & Pengembangan
 
 ### Prasyarat
-Pastikan Anda telah memasang **Bun** (≥ 1.3) di sistem lokal Anda.
 
-### 1. Pemasangan Dependensi
-Pasang seluruh paket pustaka dengan cepat menggunakan Bun:
+- **Bun** ≥ 1.3 — [Install Bun](https://bun.sh)
+- Node.js ≥ 20 (opsional, Bun sudah mencakup runtime)
+
+### 1. Clone & Install
+
 ```bash
+git clone https://github.com/amirisback/tyrian.git
+cd tyrian
 bun install
 ```
 
-### 2. Jalankan Mode Pengembangan
-Jalankan server lokal untuk melihat hasil perubahan secara langsung:
+### 2. Jalankan Development Server
+
 ```bash
 bun run dev
 ```
-Buka [http://localhost:3000](http://localhost:3000) di peramban Anda.
 
-### 3. Pemeriksaan Linter (ESLint)
-Pastikan kode Anda bebas dari error linter sebelum melakukan komit:
+Buka [http://localhost:3000](http://localhost:3000) — klik **⚡ LUNCURKAN GAME** dan nikmati!
+
+### 3. Lint & Build
+
 ```bash
+# Cek linter
 bun run lint
-```
 
-### 4. Build untuk Produksi
-Verifikasi kelayakan kompilasi proyek Next.js Anda:
-```bash
+# Build produksi
 bun run build
 ```
 
 ---
 
-## 🌐 Panduan Penggunaan i18n (Internationalization)
+## 🎮 Cara Memainkan Tyrian
 
-Pengaturan bahasa menggunakan cookie `NEXT_LOCALE` tanpa mengubah URL path.
+### Kontrol Keyboard (Default)
 
-### Di Server Component:
-```typescript
-import { getCurrentDictionary } from "@/lib/i18n-server";
+| Tombol | Fungsi |
+|--------|--------|
+| `↑ ↓ ← →` | Gerakkan pesawat |
+| `SPASI` | Tembakan utama (Front Gun) |
+| `LEFT CTRL` | Senjata belakang (Rear Gun) |
+| `LEFT ALT` | Sidekick / unit pendamping |
+| `ENTER` | Konfirmasi menu |
+| `ESC` | Pause / menu opsi |
 
-export default async function Page() {
-  const { locale, dict } = await getCurrentDictionary();
+### Tips Performa
 
-  return <h1>{dict.home.title}</h1>;
-}
-```
-
-### Di Client Component:
-Gunakan komponen `LanguageSwitcher` dari `@/app/_components/language-switcher`:
-```tsx
-import { LanguageSwitcher } from "@/app/_components/language-switcher";
-
-export function Header() {
-  return <LanguageSwitcher />;
-}
-```
+- **`Ctrl + F12`** → Tambah kecepatan DOSBox (jika masih dirasa lambat)
+- **`Ctrl + F11`** → Turunkan kecepatan (jika terlalu cepat)
+- **`Alt + Enter`** → Fullscreen internal DOSBox
+- Klik area layar game sekali untuk mengunci fokus keyboard
 
 ---
 
-## 🔒 Panduan Penggunaan ID Security Suite
+## 🌐 Halaman & Routes
 
-### 1. Penyamaran ID (Sqids)
-Cocok untuk mengubah angka ID database (seperti `10543`) menjadi hash string unik pendek seperti `o7vL39` untuk digunakan pada parameter URL tanpa menampilkan ID asli.
-
-```typescript
-import { obfuscateId, deobfuscateId } from "@/lib/obfuscator";
-
-// Proses menyamarkan ID
-const hash = obfuscateId(10543);
-console.log(hash); // Output: "o7vL39" (panjang minimal 6 karakter)
-
-// Proses mengembalikan ke ID asli
-const originalId = deobfuscateId("o7vL39");
-console.log(originalId); // Output: 10543
-```
-
-### 2. Enkripsi Kriptografis (AES-256-GCM)
-Enkripsi terautentikasi super aman untuk mengenkripsi string sensitif secara bolak-balik menggunakan algoritma AES-256-GCM. Fitur ini dilindungi dengan pustaka `"server-only"` sehingga kunci rahasia (`ENCRYPTION_KEY`) tidak akan pernah bocor ke sisi klien peramban.
-
-```typescript
-// PENTING: Hanya dapat dipanggil di Server Components, Server Actions, atau API Routes
-import { encrypt, decrypt } from "@/lib/crypto";
-
-// Proses Enkripsi
-const token = encrypt("user-1234-uuid-secret");
-console.log(token); // Output: Base64 URL-Safe String terenkripsi
-
-// Proses Dekripsi
-const plainText = decrypt(token);
-console.log(plainText); // Output: "user-1234-uuid-secret"
-```
-
-*Catatan: Jika token terenkripsi mengalami manipulasi karakter oleh peretas, proses dekripsi akan secara otomatis mendeteksi kegagalan otentikasi data dan mengembalikan nilai `null` secara aman untuk mencegah serangan injeksi.*
+| Route | Deskripsi |
+|-------|-----------|
+| `/` | Homepage — Game Arena, Ship Hangar, Weapons, Episodes, OST, Leaderboard |
+| `/manual` | Panduan Pilot lengkap + daftar cheat code |
+| `/source` | OpenTyrian source code showcase & arsitektur game |
+| `/api/dos-bundle?game=tyrian-2000` | CORS proxy endpoint untuk bundle game |
 
 ---
 
-## 🚀 Konfigurasi Environment Variables
+## 💻 OpenTyrian Source Code
 
-Template ini menggunakan sistem prioritas variabel lingkungan bawaan Next.js. Rahasia kriptografi diatur **tanpa** awalan `NEXT_PUBLIC_` untuk memastikan keamanan penuh di sisi server.
+Repository ini menyertakan **OpenTyrian** (https://github.com/opentyrian/opentyrian) — port open-source resmi Tyrian berbasis C/SDL — di direktori `opentyrian/`.
 
-Salin berkas template `.env.example` menjadi `.env.local` untuk konfigurasi lokal Anda:
-```bash
-cp .env.example .env.local
-```
+Source code ini disertakan untuk:
+- **Referensi arsitektur** game Tyrian
+- **Dokumentasi** pada halaman `/source`
+- **Potensi kompilasi WASM** di masa depan menggunakan Emscripten
 
-### Variabel Utama:
-* `ENCRYPTION_KEY`: Kunci rahasia berukuran **tepat 32 karakter** (256-bit) yang digunakan oleh modul AES-GCM.
-* `SQIDS_ALPHABET`: Deretan karakter kustom yang digunakan oleh Sqids untuk mengacak hash URL yang dihasilkan.
+> **Catatan:** Source C/SDL ini **tidak diikutsertakan** dalam `bun run build` (Next.js hanya mengkompilasi TypeScript). Untuk mengkompilasi ke WebAssembly, diperlukan Emscripten SDK (`emsdk`) secara terpisah.
+
+---
+
+## 🔧 Tech Stack
+
+| Teknologi | Versi | Fungsi |
+|-----------|-------|--------|
+| Next.js | 16.3.0 | App Router, Server Components, API Routes |
+| React | 19.2.8 | UI Library |
+| TypeScript | Strict Mode | Type Safety |
+| Tailwind CSS | v4.3.3 | Styling & Design System |
+| Serwist | v9.5.12 | PWA Service Worker |
+| js-dos | v8 (latest) | DOSBox WebAssembly Emulator |
+| Bun | ≥ 1.3 | Package Manager & Runtime |
+
+---
+
+## 📜 Lisensi
+
+- **Kode proyek ini**: MIT License — lihat [LICENSE](LICENSE)
+- **Tyrian 2000**: Freeware — dirilis gratis oleh Epic MegaGames
+- **OpenTyrian**: GNU GPL v2 — lihat [opentyrian/COPYING](opentyrian/COPYING)
+
+---
+
+## 🙏 Kredit
+
+- **Tyrian 2000** — dikembangkan oleh Eclipse Software, dipublikasikan oleh Epic MegaGames (1999)
+- **OpenTyrian** — port SDL open-source oleh Carl Reinke et al.
+- **js-dos v8** — emulator DOSBox WASM oleh [caiiiycuk](https://github.com/caiiiycuk/js-dos)
+- **Musik** — Alexander Brandon (OST Tyrian yang legendaris)
