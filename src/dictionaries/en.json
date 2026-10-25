@@ -48,14 +48,14 @@
     "system": "System"
   },
   "metadata": {
-    "title": "Tyrian — Legendary DOS Game (Next.js 16 + J-Dos)",
-    "description": "Play classic 1995 Tyrian DOS game directly in your browser using J-Dos & Next.js 16. Includes OpenTyrian source showcase, ship hangar, OST jukebox player, and complete manual."
+    "title": "Tyrian — Legendary Sci-Fi Arcade (Direct Web Engine + Next.js 16)",
+    "description": "Play classic 1995 Tyrian directly in your browser using a native Direct Web Engine without .EXE files, alongside DOSBox emulation, OpenTyrian architecture showcase, ship hangar, and OST jukebox."
   },
   "hero": {
-    "badge": "CLASSIC 1995 DOS ARCADE • OPTIMIZED FOR NEXT.JS 16",
+    "badge": "CLASSIC 1995 RETRO ARCADE • DIRECT WEB ENGINE (ZERO .EXE)",
     "title": "TYRIAN",
     "subtitle": "Epic Sci-Fi Space Combat Against MicroSol Megacorp",
-    "description": "Relive the legendary 1995 vertical scrolling shooter by Eclipse Software & Epic MegaGames. Powered by WebAssembly J-Dos emulation with smooth 60 FPS performance across all devices.",
+    "description": "Relive the legendary 1995 vertical scrolling shooter by Eclipse Software & Epic MegaGames. Runs directly in the website engine (HTML5 Canvas + Web Audio) without processing to an .EXE, delivering instant 60 FPS gameplay on all devices.",
     "ctaPlay": "PLAY GAME NOW",
     "ctaSource": "EXPLORE OPEN TYRIAN",
     "stat1Label": "FRAME RATE",

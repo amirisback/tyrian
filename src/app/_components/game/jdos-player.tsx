@@ -23,6 +23,26 @@ interface JdosPlayerProps {
   };
 }
 
+interface DosCommandInterface {
+  stop: () => void;
+  sendKeyEvent?: (keyCode: number, pressed: boolean) => void;
+}
+
+interface DosOptions {
+  url?: string;
+  noSideBar?: boolean;
+  noFullscreen?: boolean;
+  onEvent?: (event: string, ci?: unknown) => void;
+}
+
+type DosFactory = (element: HTMLDivElement, options: DosOptions) => DosCommandInterface;
+
+declare global {
+  interface Window {
+    Dos?: DosFactory;
+  }
+}
+
 // Tyrian 2000 .jsdos bundle via local proxy (bypass CORS dari cdn.dos.zone)
 const TYRIAN_BUNDLE = "/api/dos-bundle?game=tyrian-2000";
 const JSDOS_JS = "https://v8.js-dos.com/latest/js-dos.js";
@@ -33,14 +53,16 @@ export function JdosPlayer({ dict }: JdosPlayerProps) {
   const [loadMsg, setLoadMsg] = useState<string>("");
   const [showGamepad, setShowGamepad] = useState<boolean>(true);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
-  const [scriptReady, setScriptReady] = useState<boolean>(false);
+  const [, setScriptReady] = useState<boolean>(false);
 
-  const containerRef = useRef<HTMLDivElement>(null);   // outer wrapper (fullscreen target)
-  const dosBoxRef = useRef<HTMLDivElement>(null);       // js-dos mounts here
-  const dosRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null); // outer wrapper (fullscreen target)
+  const dosBoxRef = useRef<HTMLDivElement>(null); // js-dos mounts here
+  const dosRef = useRef<DosCommandInterface | null>(null);
 
   // Load js-dos v8 CSS + JS dynamically once
   useEffect(() => {
+    let isMounted = true;
+
     // CSS
     if (!document.getElementById("jsdos-css")) {
       const link = document.createElement("link");
@@ -55,46 +77,32 @@ export function JdosPlayer({ dict }: JdosPlayerProps) {
       script.id = "jsdos-js";
       script.src = JSDOS_JS;
       script.async = true;
-      script.onload = () => setScriptReady(true);
+      script.onload = () => {
+        if (isMounted) setScriptReady(true);
+      };
       script.onerror = () => console.error("js-dos v8 script failed to load");
       document.head.appendChild(script);
     } else {
-      // Already loaded in a previous mount
-      setScriptReady(true);
+      setTimeout(() => {
+        if (isMounted) setScriptReady(true);
+      }, 0);
     }
 
     return () => {
-      // Cleanup dos instance on unmount
+      isMounted = false;
       if (dosRef.current) {
-        try { dosRef.current.stop(); } catch (_) {}
+        try {
+          dosRef.current.stop();
+        } catch {
+          // Ignore cleanup errors
+        }
         dosRef.current = null;
       }
     };
   }, []);
 
-  const launchGame = async () => {
-    if (!dosBoxRef.current) return;
-
-    setPhase("loading");
-    setLoadMsg("Menyiapkan DOSBox WASM engine...");
-
-    const Dos = (window as any).Dos;
-    if (!Dos) {
-      setLoadMsg("Menunggu js-dos runtime...");
-      // Wait for script ready
-      const wait = setInterval(() => {
-        if ((window as any).Dos) {
-          clearInterval(wait);
-          mountDos();
-        }
-      }, 200);
-      return;
-    }
-    mountDos();
-  };
-
   const mountDos = () => {
-    const Dos = (window as any).Dos;
+    const Dos = window.Dos;
     if (!Dos || !dosBoxRef.current) return;
 
     setLoadMsg("Memuat Tyrian 2000 (bundle ~30MB)...");
@@ -105,7 +113,7 @@ export function JdosPlayer({ dict }: JdosPlayerProps) {
         url: TYRIAN_BUNDLE,
         noSideBar: true,
         noFullscreen: true,
-        onEvent: (event: string, ci2: any) => {
+        onEvent: (event: string) => {
           if (event === "emu-ready") {
             setPhase("running");
             setLoadMsg("");
@@ -125,9 +133,33 @@ export function JdosPlayer({ dict }: JdosPlayerProps) {
     }
   };
 
+  const launchGame = () => {
+    if (!dosBoxRef.current) return;
+
+    setPhase("loading");
+    setLoadMsg("Menyiapkan DOSBox WASM engine...");
+
+    const Dos = window.Dos;
+    if (!Dos) {
+      setLoadMsg("Menunggu js-dos runtime...");
+      const wait = setInterval(() => {
+        if (window.Dos) {
+          clearInterval(wait);
+          mountDos();
+        }
+      }, 200);
+      return;
+    }
+    mountDos();
+  };
+
   const restartGame = () => {
     if (dosRef.current) {
-      try { dosRef.current.stop(); } catch (_) {}
+      try {
+        dosRef.current.stop();
+      } catch {
+        // Ignore stop errors
+      }
       dosRef.current = null;
     }
     // Clear the div and remount
@@ -154,7 +186,7 @@ export function JdosPlayer({ dict }: JdosPlayerProps) {
   }, []);
 
   return (
-    <div id="game-arena" className="w-full scroll-mt-20 space-y-4">
+    <div id="game-arena-dos" className="w-full scroll-mt-20 space-y-4">
       {/* Toolbar */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3 border-b border-slate-800">
         <div>

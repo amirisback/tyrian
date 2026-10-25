@@ -34,6 +34,6 @@
     "dependencies": "SDL2, SDL2_net (opsional), GCC / Clang, Make",
     "linuxCompile": "make TYRIAN_DIR=/usr/share/opentyrian",
     "windowsCompile": "make (menggunakan MinGW-w64)",
-    "wasmSupport": "Dapat dikompilasi dengan Emscripten ke WebAssembly atau dijalankan via DOSBox / JS-DOS."
+    "wasmSupport": "Direwrite langsung ke Tyrian Web Engine (HTML5 Canvas + Web Audio) tanpa perlu build .EXE atau emulator DOS, serta mendukung kompilasi Emscripten WebAssembly & DOSBox."
   }
 }

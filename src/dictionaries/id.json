@@ -48,14 +48,14 @@
     "system": "Sistem"
   },
   "metadata": {
-    "title": "Tyrian — Game DOS Legendaris (Next.js 16 + J-Dos)",
-    "description": "Mainkan Tyrian DOS Game klasik langsung di browser menggunakan J-Dos & Next.js 16. Dilengkapi showcase source code OpenTyrian, hangar pesawat, OST player, dan panduan lengkap."
+    "title": "Tyrian — Game Antariksa Legendaris (Direct Web Engine + Next.js 16)",
+    "description": "Mainkan Tyrian klasik langsung di browser menggunakan Direct Web Engine asli tanpa file .EXE, dilengkapi emulator DOSBox, showcase arsitektur OpenTyrian, hangar pesawat, dan OST player."
   },
   "hero": {
-    "badge": "ARCADE DOS KLASIK 1995 • DIOPTIMALKAN UNTUK NEXT.JS 16",
+    "badge": "ARCADE RETRO KLASIK • DIRECT WEB ENGINE (ZERO .EXE)",
     "title": "TYRIAN",
     "subtitle": "Pertempuran Antariksa Epik Melawan Megakorporasi MicroSol",
-    "description": "Rasakan kembali sensasi vertical scrolling shooter legendaris tahun 1995 karya Eclipse Software & Epic MegaGames. Ditenagai emulator WebAssembly J-Dos dengan performa 60 FPS mulus di semua perangkat.",
+    "description": "Rasakan kembali sensasi vertical scrolling shooter legendaris tahun 1995 karya Eclipse Software & Epic MegaGames. Berjalan langsung di website engine (HTML5 Canvas + Web Audio) tanpa proses ke .EXE, dengan performa 60 FPS mulus di semua perangkat.",
     "ctaPlay": "MAIN GAME SEKARANG",
     "ctaSource": "EKSPLORASI OPEN TYRIAN",
     "stat1Label": "FRAME RATE",

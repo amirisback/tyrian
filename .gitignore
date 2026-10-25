@@ -43,3 +43,6 @@ next-env.d.ts
 
 # Webstorm
 .idea
+
+# cloned sources
+/opentyrian-src

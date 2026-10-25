@@ -3,8 +3,7 @@ import { generateWebsiteJsonLd } from "@/lib/seo";
 import { Header } from "./_components/header";
 import { Footer } from "./_components/footer";
 import { HeroSection } from "./_components/sections/hero-section";
-import { JdosPlayer } from "./_components/game/jdos-player";
-import { ControlsGuide } from "./_components/game/controls-guide";
+import { GameArena } from "./_components/game/game-arena";
 import { HangarSection } from "./_components/sections/hangar-section";
 import { WeaponsSection } from "./_components/sections/weapons-section";
 import { EpisodesSection } from "./_components/sections/episodes-section";
@@ -61,8 +60,7 @@ export default async function Home() {
 
         {/* Game Arena Section */}
         <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 py-12 space-y-8">
-          <JdosPlayer dict={dict} />
-          <ControlsGuide dict={dict} />
+          <GameArena dict={dict} />
         </div>
 
         {/* Ship Hangar Section */}
