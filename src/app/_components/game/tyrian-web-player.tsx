@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { TyrianWebEngine } from "./web-engine/engine";
 import { GamePhase, ShipId } from "./web-engine/types";
 import { SHIPS } from "./web-engine/ships";
@@ -202,7 +203,7 @@ export function TyrianWebPlayer({ dict }: TyrianWebPlayerProps) {
             }`}
             title="Toggle FM Synthesis Audio"
           >
-            {!isMuted ? "🔊 FM AUDIO ON" : "🔇 AUDIO MUTED"}
+            {!isMuted ? `🔊 ${dict.common.soundOn}` : `🔇 ${dict.common.soundOff}`}
           </button>
 
           <button
@@ -222,7 +223,7 @@ export function TyrianWebPlayer({ dict }: TyrianWebPlayerProps) {
             className="px-3 py-1.5 rounded text-xs font-mono border bg-slate-800 border-slate-700 text-slate-300 hover:border-cyan-400 transition-all"
             title="Toggle Fullscreen"
           >
-            {isFullscreen ? "🗗 EXIT FULL" : "⛶ FULLSCREEN"}
+            {isFullscreen ? "🗗 EXIT FULL" : `⛶ ${dict.common.fullscreen}`}
           </button>
         </div>
       </div>
@@ -258,18 +259,30 @@ export function TyrianWebPlayer({ dict }: TyrianWebPlayerProps) {
                 {(Object.keys(SHIPS) as ShipId[]).map((id) => {
                   const ship = SHIPS[id];
                   const isSelected = selectedShip === id;
+                  const spritePath = `/sprites/ship_${id}.png`;
                   return (
                     <button
                       key={id}
                       onClick={() => handleSelectShip(id)}
-                      className={`p-2.5 rounded-lg border text-left transition-all ${
+                      className={`p-2.5 rounded-lg border text-center flex flex-col items-center gap-1.5 transition-all ${
                         isSelected
-                          ? "bg-cyan-500/20 border-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.4)]"
+                          ? "bg-cyan-500/20 border-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.4)] scale-105"
                           : "bg-slate-800/60 border-slate-700 text-slate-400 hover:border-slate-500"
                       }`}
                     >
-                      <div className="font-mono font-bold text-xs text-white">{ship.name}</div>
-                      <div className="text-[10px] text-cyan-400 mt-0.5">{ship.manufacturer.split(" ")[0]}</div>
+                      <Image
+                        src={spritePath}
+                        alt={ship.name}
+                        width={36}
+                        height={36}
+                        unoptimized
+                        className="w-9 h-9 object-contain filter drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]"
+                        style={{ imageRendering: "pixelated" }}
+                      />
+                      <div>
+                        <div className="font-mono font-bold text-[11px] text-white leading-tight">{ship.name}</div>
+                        <div className="text-[9px] text-cyan-400 mt-0.5">{ship.manufacturer.split(" ")[0]}</div>
+                      </div>
                     </button>
                   );
                 })}
@@ -288,7 +301,7 @@ export function TyrianWebPlayer({ dict }: TyrianWebPlayerProps) {
             {/* Launch Button */}
             <div className="pt-2">
               <ArcadeButton variant="cyan" size="lg" onClick={handleStartGame}>
-                🚀 LUNCURKAN MISI TEMPUR (START)
+                🚀 {dict.common.launchGame}
               </ArcadeButton>
             </div>
 
@@ -315,7 +328,7 @@ export function TyrianWebPlayer({ dict }: TyrianWebPlayerProps) {
                 LANJUTKAN (RESUME)
               </ArcadeButton>
               <ArcadeButton variant="outline" size="md" onClick={handleStartGame}>
-                RESTART
+                {dict.common.restart}
               </ArcadeButton>
             </div>
           </div>
@@ -340,7 +353,7 @@ export function TyrianWebPlayer({ dict }: TyrianWebPlayerProps) {
             </div>
             <div className="pt-2">
               <ArcadeButton variant="amber" size="lg" onClick={handleStartGame}>
-                🔄 COBA LAGI (RETRY)
+                🔄 {dict.common.restart}
               </ArcadeButton>
             </div>
           </div>
@@ -412,7 +425,7 @@ export function TyrianWebPlayer({ dict }: TyrianWebPlayerProps) {
             onClick={() => setShowGamepad(!showGamepad)}
             className="sm:hidden px-2.5 py-1 rounded bg-slate-800 text-slate-300 hover:bg-slate-700"
           >
-            {showGamepad ? "Sembunyikan Gamepad" : "Tampilkan Gamepad"}
+            {showGamepad ? "Sembunyikan Gamepad" : dict.game.virtualController}
           </button>
         </div>
       </div>

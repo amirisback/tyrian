@@ -9,7 +9,7 @@
     "shield": 100,
     "power": 90,
     "speed": 95,
-    "image": "/ships/usp-talon.svg",
+    "image": "/sprites/ship_talon.png",
     "special": "Afterburner Burst",
     "color": "cyan"
   },
@@ -23,7 +23,7 @@
     "shield": 140,
     "power": 130,
     "speed": 75,
-    "image": "/ships/gencore-phoenix.svg",
+    "image": "/sprites/ship_phoenix.png",
     "special": "Dual Reactor Surge",
     "color": "purple"
   },
@@ -37,7 +37,7 @@
     "shield": 110,
     "power": 115,
     "speed": 100,
-    "image": "/ships/microsol-stalker.svg",
+    "image": "/sprites/ship_stalker.png",
     "special": "Cloaking Shunt",
     "color": "amber"
   },
@@ -51,7 +51,7 @@
     "shield": 160,
     "power": 150,
     "speed": 85,
-    "image": "/ships/super-tyrian.svg",
+    "image": "/sprites/boss_dreadnought.png",
     "special": "Zinglon Singularity",
     "color": "green"
   },
@@ -65,7 +65,7 @@
     "shield": 120,
     "power": 105,
     "speed": 110,
-    "image": "/ships/super-carrot.svg",
+    "image": "/sprites/ship_talon.png",
     "special": "Vitamin Boost Overdrive",
     "color": "amber"
   }

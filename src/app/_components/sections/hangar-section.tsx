@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import shipsData from "@/data/ships.json";
 import { ArcadeCard } from "../ui/arcade-card";
 import { Badge } from "../ui/badge";
@@ -75,10 +76,18 @@ export function HangarSection({ dict }: HangarSectionProps) {
               </span>
             </div>
 
-            {/* Glowing Tech Vessel Icon */}
-            <div className="my-8 relative flex items-center justify-center w-44 h-44 rounded-full border border-cyan-500/30 bg-cyan-950/20 shadow-[0_0_40px_rgba(0,240,255,0.2)]">
-              <div className="text-6xl animate-pulse">🚀</div>
-              <div className="absolute inset-0 rounded-full border border-dashed border-cyan-400/40 animate-spin" style={{ animationDuration: "20s" }} />
+            {/* Glowing Tech Vessel Hologram */}
+            <div className="my-6 relative flex items-center justify-center w-48 h-48 rounded-2xl border border-cyan-500/30 bg-black/60 shadow-[0_0_40px_rgba(0,240,255,0.25)] p-4">
+              <Image
+                src={activeShip.image}
+                alt={activeShip.name}
+                width={128}
+                height={128}
+                unoptimized
+                className="w-32 h-32 object-contain filter drop-shadow-[0_0_20px_rgba(6,182,212,0.6)]"
+                style={{ imageRendering: "pixelated" }}
+              />
+              <div className="absolute inset-0 rounded-2xl border border-dashed border-cyan-400/30 pointer-events-none animate-pulse" />
             </div>
 
             <div className="text-center space-y-1">
